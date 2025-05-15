@@ -1,0 +1,202 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #f2f2f2;
+  padding-bottom: 40px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Container for the left background image and right content */
+.main-content {
+  display: flex;
+  min-height: 500px;
+}
+
+/* Right side content taking remaining 70% */
+.content-right {
+  flex: 1;
+  padding: 40px 50px;
+  background-color: #f2f2f2;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  box-sizing: border-box;
+}
+
+.weekly-programs {
+  background-color: #f2f2f2;
+  width: 400%;
+  max-width: 1000px;
+  padding: 2.5em;
+  border-radius: 0px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  margin: 2.5em auto;  /* <-- This centers the box horizontally */
+  box-sizing: border-box;
+}
+
+
+.weekly-programs ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.weekly-programs li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;         /* space between items */
+}
+
+.weekly-programs li img {
+  width: 160px;                /* bigger images */
+  height: auto;                /* keep aspect ratio */
+  border-radius: 8px;
+  margin-right: 25px;          /* spacing between image and text */
+  flex-shrink: 0;              /* prevent shrinking */
+}
+
+.weekly-programs li div {
+  flex: 1;                     /* content takes remaining space */
+}
+
+.weekly-programs li strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.program-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  gap: 15px;
+}
+
+.program-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.program-item h4 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #3b5bdb;
+}
+
+.program-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #3b5bdb;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a.active,
+nav a:hover {
+  color: #3b5bdb;
+}
+
+.hero {
+  padding: 60px 50px;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #3b5bdb;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.btn {
+  background-color: #3b5bdb;
+  color: white;
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #2342a0;
+}
+
+/* About Page Styling */
+.aboutpage {
+  padding: 50px;
+}
+
+.aboutpage h1 {
+  color: #3b5bdb;
+}
+
+/* Sermons Page Styling */
+.sermonspage {
+  padding: 50px;
+}
+
+.sermon-list {
+  max-width: 800px;
+}
+
+.sermon {
+  background: #fff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #3b5bdb;
+}
+
+.sermon h3 {
+  margin: 0 0 10px;
+}
+
+.sermon a {
+  color: #3b5bdb;
+  text-decoration: underline;
+}
