@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Church Website</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body>
+    <header>
+        <h1>Chapel of Grace Anglican Church, Bwari</h1>
+        <button id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">&#9776;</button>
+        <nav id="nav-menu" class="collapsed">
+            <a href="#home" onclick="showSection('home'); toggleMenu()" tabindex="0">Home</a>
+            <a href="#sermons" onclick="showSection('sermons'); toggleMenu()" tabindex="0">Sermons</a>
+            <a href="#schedule" onclick="showSection('schedule'); toggleMenu()" tabindex="0">Schedule</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Home / Daily Devotional and Upcoming Events -->
+        <section id="home" class="section active-section">
+            <h2>Daily Devotional</h2>
+            <div class="devotional" id="daily-devotional">
+                "Trust in the LORD with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight." - Proverbs 3:5-6<br><br>
+                May you find peace and guidance in His word today.
+            </div>
+
+            <h2>Upcoming Events &amp; Announcements</h2>
+            <ul class="events-list" id="events-list">
+                <li><strong>Monday Bible Study</strong>:- Every Monday at the permanent site
+                    <br><strong>Time</strong>:- 5:00 - 6:00 PM </br>
+                </li>
+                <li><strong>Wednesday Mid-Week Service</strong>:- Every Wednesday at the permanent site 
+                    <br><strong>Time</strong>:- 5:00PM </br>
+                </li>
+                <li><strong>Sunday Service</strong>:- Every Sunday in the sanctuary at Law School & the permanent site
+                    <br><strong>Time</strong>:- 7:00AM - 9:00AM and 9:00AM - 12:00PM </br>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Sermons page -->
+        <section id="sermons" class="section" style="display:none;">
+            <h2>Past Sermons</h2>
+            <div class="sermon-controls" style="margin: 1rem 0;">
+                <input type="text" id="search-sermons" placeholder="Search Sermons..." style="margin-bottom:1rem; padding:0.3rem; width: 100%;" />
+            </div>
+            <div class="sermon-list">
+                <article class="sermon">
+                    <img src="/assets/img/Laziness.jpg" alt="Laziness" />
+                    <div class="sermon-content">
+                        <h3>Laziness</h3>
+                        <p class="sermon-desc">This message speaks to every age because laziness manifests differently throughout our lives, but the root issue remains the same: 
+                            a disconnect between God's design for our lives and our daily choices.</p>
+                        <a href="/assets/PDFs/Laziness.pdf" class="download-link" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                    </div>
+                </article>
+                <article class="sermon">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Sermon 2 image" />
+                    <div class="sermon-content">
+                        <h3>Walking in Faith</h3>
+                        <p class="sermon-desc">Encouragement to trust God’s plan even when the path seems uncertain.</p>
+                        <a href="https://drive.google.com/uc?export=download&amp;id=YOUR_FILE_ID_2" class="download-link" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                    </div>
+                </article>
+                <article class="sermon">
+                    <img src="/assets/img/Peace-in-Troubled-Times.jpg" />
+                    <div class="sermon-content">
+                        <h3>Peace in Troubled Times</h3>
+                        <p class="sermon-desc">Finding hope and peace through scripture during difficult seasons.</p>
+                        <a href="https://drive.google.com/uc?export=download&amp;id=YOUR_FILE_ID_3" class="download-link" target="_blank" rel="noopener noreferrer">Download PDF</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Schedule page -->
+        <section id="schedule" class="section" style="display:none;">
+            <h2>Church Service Schedule &amp; Announcements</h2>
+            <table class="schedule" aria-label="Church weekly schedule">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Activity</th>
+                        <th>Time</th>
+                        <th>Location</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Bible Study</td>
+                        <td>7:00 PM</td>
+                        <td>Fellowship Hall</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Mid-Week Service</td>
+                        <td>7:00 PM</td>
+                        <td>Main Sanctuary</td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td>Morning Service</td>
+                        <td>10:00 AM</td>
+                        <td>Main Sanctuary</td>
+                    </tr>
+                    <tr>
+                        <td>By appointment</td>
+                        <td>Church Visitations</td>
+                        <td>Varies</td>
+                        <td>Various</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem; color: #2c5282;">Recent Announcements</h3>
+            <ul class="events-list">
+                <li>Thank you for the generous donations during the last service. The community garden project is underway.</li>
+                <li>Next Sunday’s service will have a special guest speaker from the youth ministry.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Chapel of Grace Anglican Church, Bwari.
+        <br>Rights Reserved.</br>
+    </footer>
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = section.id === id ? 'block' : 'none';
+            });
+            if (id === 'home') {
+                document.title = 'Chapel of Grace Anglican Church, Bwari | Home';
+                window.location.hash = 'home';
+            } else if (id === 'sermons') {
+                document.title = 'Chapel of Grace Anglican Church, Bwari | Sermons';
+                window.location.hash = 'sermons';
+            } else if (id === 'schedule') {
+                document.title = 'Chapel of Grace Anglican Church, Bwari | Schedule';
+                window.location.hash = 'schedule';
+            }
+        }
+
+        // Toggle navigation menu on mobile
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+            navToggle.setAttribute('aria-expanded', String(!expanded));
+            navMenu.classList.toggle('collapsed');
+        });
+
+        // Close menu when a nav link is clicked on mobile
+        function toggleMenu() {
+            if (!navMenu.classList.contains('collapsed')) {
+                navMenu.classList.add('collapsed');
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Initialize page based on URL hash
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substr(1);
+            if (hash && ['home', 'sermons', 'schedule'].includes(hash)) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+
+            // Search functionality
+            const searchInput = document.getElementById('search-sermons');
+            const sermons = document.querySelectorAll('.sermon-list .sermon');
+
+            searchInput.addEventListener('input', () => {
+                const query = searchInput.value.toLowerCase().trim();
+                sermons.forEach(sermon => {
+                    const title = sermon.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        sermon.style.display = '';
+                    } else {
+                        sermon.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

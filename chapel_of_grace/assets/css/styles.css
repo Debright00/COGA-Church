@@ -1,0 +1,246 @@
+/* Reset and base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  color: #1a202c;
+  line-height: 1.6;
+}
+a {
+  color: #3182ce;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #2c5282;
+  text-decoration: underline;
+}
+/* Header with background image and overlay */
+header {
+  background-image: linear-gradient(rgba(44, 82, 130, 0.85), rgba(44, 82, 130, 0.85)), url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+/* Navigation toggle button (hamburger) */
+#nav-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  padding: 0.2rem 0.5rem;
+  user-select: none;
+}
+#nav-toggle:focus {
+  outline: 2px solid #90cdf4;
+  outline-offset: 2px;
+}
+/* Navigation menu */
+nav {
+  margin-top: 0;
+}
+/* Navigation buttons */
+nav a {
+  display: inline-block;
+  background-color: #4a90e2;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  margin-right: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  text-align: center;
+  user-select: none;
+}
+nav a:hover, nav a:focus {
+  background-color: #0972f291;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  outline: none;
+}
+/* Collapsed navigation menu (mobile) */
+nav.collapsed {
+  display: none;
+}
+/* On desktop, show nav normally */
+@media (min-width: 601px) {
+  #nav-toggle {
+    display: none;
+  }
+  nav {
+    display: block !important;
+    margin-top: 0.8rem;
+  }
+}
+/* On mobile, hide nav by default; show toggle button */
+@media (max-width: 600px) {
+  #nav-toggle {
+    display: block;
+  }
+  nav {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  nav a {
+    display: block;
+    margin: 0.4rem 0;
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+}
+main {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+section {
+  margin-bottom: 3rem;
+}
+h2 {
+  font-size: 1.8rem;
+  color: #2c5282;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #2c5282;
+  padding-bottom: 0.3rem;
+}
+/* Sermons grid */
+.sermon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.sermon {
+  background: white;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s ease;
+}
+.sermon:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+}
+.sermon img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+}
+.sermon-content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.sermon-desc {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.95rem;
+  color: #4a5568;
+  flex-grow: 1;
+}
+.sermon a.download-link {
+  align-self: flex-start;
+  background-color: #3182ce;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.sermon a.download-link:hover {
+  background-color: #2c5282;
+}
+/* Daily devotional */
+.devotional {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #2d3748;
+  line-height: 1.5;
+}
+/* Schedule table */
+table.schedule {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+}
+th, td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  text-align: left;
+}
+th {
+  background-color: #2c5282;
+  color: white;
+  font-weight: 600;
+}
+tbody tr:hover {
+  background-color: #ebf4ff;
+}
+/* Announcements and events */
+.events-list {
+  list-style: none;
+  padding-left: 0;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
+  margin-top: 1rem;
+}
+.events-list li {
+  background: #fefefe;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #2d3748;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.05);
+  transition: box-shadow 0.3s ease;
+}
+.events-list li:last-child {
+  margin-bottom: 0;
+}
+.events-list li:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+/* Footer */
+footer {
+  background-color: #2c5282;
+  color: white;
+  text-align: center;
+  padding: 1rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+}
